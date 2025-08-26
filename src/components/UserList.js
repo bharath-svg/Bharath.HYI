@@ -50,11 +50,22 @@ const UserList = () => {
     setModalVisible(true);
   };
 
+  // const handleSubmit = userData => {
+  //   if (isEditing) {
+  //     actions.updateUser({...userData, id: selectedUser.id});
+  //   } else {
+  //     actions.addUser({...userData, id: Date.now()});
+  //   }
+  //   setModalVisible(false);
+  // };
+
   const handleSubmit = userData => {
     if (isEditing) {
       actions.updateUser({...userData, id: selectedUser.id});
+      Alert.alert('Success', 'User updated successfully!');
     } else {
       actions.addUser({...userData, id: Date.now()});
+      Alert.alert('Success', 'User added successfully!');
     }
     setModalVisible(false);
   };
@@ -64,23 +75,47 @@ const UserList = () => {
     // Fetch users for new page if API supports
   };
 
+  // const renderUserItem = ({item}) => (
+  //   <View style={commonStyles.card}>
+  //     <Text style={{fontWeight: 'bold', fontSize: 16}}>{item.name}</Text>
+  //     <Text>{item.email}</Text>
+  //     <Text>{item.phone}</Text>
+
+  //     <View style={styles.actionRow}>
+  //       <TouchableOpacity
+  //         style={[commonStyles.button, styles.editButton]}
+  //         onPress={() => handleEdit(item)}>
+  //         <Text style={commonStyles.buttonText}>Edit</Text>
+  //       </TouchableOpacity>
+
+  //       <TouchableOpacity
+  //         style={[commonStyles.button, styles.deleteButton]}
+  //         onPress={() => handleDelete(item)}>
+  //         <Text style={commonStyles.buttonText}>Delete</Text>
+  //       </TouchableOpacity>
+  //     </View>
+  //   </View>
+  // );
+
   const renderUserItem = ({item}) => (
     <View style={commonStyles.card}>
-      <Text style={{fontWeight: 'bold', fontSize: 16}}>{item.name}</Text>
-      <Text>{item.email}</Text>
-      <Text>{item.phone}</Text>
+      <Text style={{fontWeight: 'bold', fontSize: 16, color: '#000'}}>
+        {item.name}
+      </Text>
+      <Text style={{color: '#333'}}>{item.email}</Text>
+      <Text style={{color: '#333'}}>{item.phone}</Text>
 
       <View style={styles.actionRow}>
         <TouchableOpacity
           style={[commonStyles.button, styles.editButton]}
           onPress={() => handleEdit(item)}>
-          <Text style={commonStyles.buttonText}>Edit</Text>
+          <Text style={[commonStyles.buttonText, {color: '#fff'}]}>Edit</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[commonStyles.button, styles.deleteButton]}
           onPress={() => handleDelete(item)}>
-          <Text style={commonStyles.buttonText}>Delete</Text>
+          <Text style={[commonStyles.buttonText, {color: '#fff'}]}>Delete</Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -33,6 +33,7 @@ export const commonStyles = StyleSheet.create({
     borderRadius: 6,
     padding: 12,
     marginBottom: 12,
+    color: 'black',
   },
   errorText: {
     color: 'red',

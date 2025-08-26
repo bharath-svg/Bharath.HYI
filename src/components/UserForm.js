@@ -43,16 +43,26 @@ const UserForm = ({user, onSubmit, onCancel, isEditing}) => {
   return (
     <ScrollView style={{padding: 16}}>
       <TextInput
-        style={[commonStyles.input, errors.name && {borderColor: 'red'}]}
+        style={[
+          commonStyles.input,
+          {color: '#000'},
+          errors.name && {borderColor: 'red'},
+        ]}
         placeholder="Name"
+        placeholderTextColor="#888"
         value={formData.name}
         onChangeText={text => handleChange('name', text)}
       />
       {errors.name && <Text style={commonStyles.errorText}>{errors.name}</Text>}
 
       <TextInput
-        style={[commonStyles.input, errors.email && {borderColor: 'red'}]}
+        style={[
+          commonStyles.input,
+          {color: '#000'},
+          errors.email && {borderColor: 'red'},
+        ]}
         placeholder="Email"
+        placeholderTextColor="#888"
         keyboardType="email-address"
         value={formData.email}
         onChangeText={text => handleChange('email', text)}
@@ -62,9 +72,14 @@ const UserForm = ({user, onSubmit, onCancel, isEditing}) => {
       )}
 
       <TextInput
-        style={[commonStyles.input, errors.phone && {borderColor: 'red'}]}
+        style={[
+          commonStyles.input,
+          {color: '#000'},
+          errors.phone && {borderColor: 'red'},
+        ]}
         placeholder="Phone"
         keyboardType="phone-pad"
+        placeholderTextColor="#888"
         value={formData.phone}
         onChangeText={text => handleChange('phone', text)}
       />
@@ -73,8 +88,13 @@ const UserForm = ({user, onSubmit, onCancel, isEditing}) => {
       )}
 
       <TextInput
-        style={[commonStyles.input, errors.username && {borderColor: 'red'}]}
+        style={[
+          commonStyles.input,
+          {color: '#000'},
+          errors.username && {borderColor: 'red'},
+        ]}
         placeholder="Username"
+        placeholderTextColor="#888"
         value={formData.username}
         onChangeText={text => handleChange('username', text)}
       />
@@ -84,7 +104,8 @@ const UserForm = ({user, onSubmit, onCancel, isEditing}) => {
 
       <TextInput
         style={commonStyles.input}
-        placeholder="Website"
+        placeholder="Website(optional)"
+        placeholderTextColor="#888"
         value={formData.website}
         onChangeText={text => handleChange('website', text)}
       />

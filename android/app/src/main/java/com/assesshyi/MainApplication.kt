@@ -1,4 +1,4 @@
-package com.assesshyi
+package com.BharathHYI
 
 import android.app.Application
 import com.facebook.react.PackageList
